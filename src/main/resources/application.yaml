@@ -1,0 +1,21 @@
+management:
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+  health:
+    defaults:
+      enabled: false
+spring:
+  data:
+    mongodb:
+      uri: "mongodb://localhost:27017/rbs"
+logging:
+  level:
+    root: DEBUG
+    com:
+      mongodb:
+        client:
+          model: INFO
+server:
+  port: 8090
