@@ -1,13 +1,10 @@
-package co.uk.mongodb.renfer.rbspayments;
+package co.uk.mongodb.renfer.mongodb.om.alerts;
 
-import org.apache.logging.log4j.util.Strings;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
-
-import static co.uk.mongodb.renfer.rbspayments.AlertStatus.CANCELLED;
 
 @Component
 public class MongoDBOpsManagerHealthIndicator implements HealthIndicator {

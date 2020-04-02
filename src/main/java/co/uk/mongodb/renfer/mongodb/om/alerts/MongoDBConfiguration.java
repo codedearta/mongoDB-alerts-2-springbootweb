@@ -1,4 +1,4 @@
-package co.uk.mongodb.renfer.rbspayments;
+package co.uk.mongodb.renfer.mongodb.om.alerts;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;

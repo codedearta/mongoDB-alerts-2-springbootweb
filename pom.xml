@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>co.uk.mongodb.renfer</groupId>
-	<artifactId>rbspayments</artifactId>
+	<artifactId>mogodb-om-alerts</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>rbs-payments</name>
 	<description>monitor mongodb health and propagate to health check</description>
@@ -19,25 +19,16 @@
 	</properties>
 
 	<dependencies>
-
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>28.2-jre</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>bson</artifactId>
 			<version>4.0.1</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongodb-driver-core</artifactId>
 			<version>4.0.1</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongodb-driver-sync</artifactId>
@@ -48,18 +39,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-
-<!--		<dependency>-->
-<!--			<groupId>org.mongodb</groupId>-->
-<!--			<artifactId>mongodb-driver-core</artifactId>-->
-<!--			<version>4.0.1</version>-->
-<!--		</dependency>-->
-
 
 <!--		<dependency>-->
 <!--			<groupId>org.springframework.boot</groupId>-->
@@ -73,7 +56,6 @@
 <!--			</exclusions>-->
 <!--		</dependency>-->
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -82,5 +64,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

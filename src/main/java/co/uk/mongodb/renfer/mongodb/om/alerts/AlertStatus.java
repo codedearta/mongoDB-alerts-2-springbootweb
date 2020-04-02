@@ -1,4 +1,4 @@
-package co.uk.mongodb.renfer.rbspayments;
+package co.uk.mongodb.renfer.mongodb.om.alerts;
 
 public enum AlertStatus {
     TRACKING,
