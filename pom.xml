@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>co.uk.mongodb.renfer</groupId>
-	<artifactId>rbs-payments</artifactId>
+	<artifactId>rbspayments</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>rbs-payments</name>
 	<description>monitor mongodb health and propagate to health check</description>
