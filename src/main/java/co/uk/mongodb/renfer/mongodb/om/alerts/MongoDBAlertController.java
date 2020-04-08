@@ -15,7 +15,7 @@ public class MongoDBAlertController {
     }
 
     @PostMapping("/omAlert")
-    public void omAlert(@RequestBody Map<String, Object> alert) {
+    public void omAlert(@RequestBody Map<String, Object> alert, @RequestBody String salert) {
         MongoDBOpsManagerPushHealthIndicator.sendAlert(alert);
     }
 }

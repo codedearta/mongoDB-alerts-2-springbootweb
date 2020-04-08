@@ -24,7 +24,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Component
-public class MongoDBOpsManagerPullHealthIndicator implements HealthIndicator {
+public class MongoDBOpsManagerPollHealthIndicator implements HealthIndicator {
     @Autowired
     MongoClient mongoClient;
 
