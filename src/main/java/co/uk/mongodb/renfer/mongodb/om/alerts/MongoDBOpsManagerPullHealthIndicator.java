@@ -40,7 +40,7 @@ public class MongoDBOpsManagerPullHealthIndicator implements HealthIndicator {
         final Optional<Map<String,Object>> too_few_healthy_member = alerts.results
                 .stream()
                 .filter(alert ->
-                        (alert.get("eventTypeName").equals("TOO_FEW_HEALTHY_MEMBERS")) &&
+                        (alert.get("eventTypeName").equals(AlertEventTypeName.TOO_FEW_HEALTHY_MEMBERS.name())) &&
                                 alert.get("status").equals(AlertStatus.OPEN.name())
                                 || alert.get("status").equals(AlertStatus.TRACKING.name())
                 ).findAny();
