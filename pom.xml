@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>co.uk.mongodb.renfer</groupId>
-	<artifactId>mogodb-om-alerts</artifactId>
+	<artifactId>mongoDB-alerts-2-springbootweb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>rbs-payments</name>
-	<description>monitor mongodb health and propagate to health check</description>
+	<name>mongoDB-alerts-2-springbootweb</name>
+	<description>monitor mongodb health and propagate to spring boot web health check</description>
 
 	<properties>
 		<java.version>11</java.version>
