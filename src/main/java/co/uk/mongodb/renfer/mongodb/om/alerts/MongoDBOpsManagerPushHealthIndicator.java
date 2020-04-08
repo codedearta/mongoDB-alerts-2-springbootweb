@@ -4,11 +4,12 @@ import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class MongoDBOpsManagerHealthIndicator implements HealthIndicator {
-    private static Map<String, Object> latestAlert;
+public class MongoDBOpsManagerPushHealthIndicator implements HealthIndicator {
+    private static Map<String, Object> latestAlert = new HashMap<>();
 
     public static void sendAlert(Map<String, Object> alert) {
         latestAlert = alert;

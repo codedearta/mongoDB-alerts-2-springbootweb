@@ -10,6 +10,7 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.result.InsertOneResult;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.health.AbstractHealthIndicator;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
@@ -18,16 +19,12 @@ import java.util.Date;
 import java.util.Map;
 
 @Component
-public class MongoDBClusterHealthIndicator implements HealthIndicator {
+public class MongoDBClusterHealthIndicator extends AbstractHealthIndicator {
     @Autowired
     MongoClient mongoClient;
 
-    public static void SendMongoException(MongoException mongoException) {
-
-    }
-
     @Override
-    public Health health() {
+    protected void doHealthCheck(Health.Builder builder) throws MongoException {
         final MongoDatabase db = this.mongoClient.getDatabase("rbs");
         final MongoCollection<Document> collection = this.mongoClient
                 .getDatabase("rbs")
@@ -36,23 +33,8 @@ public class MongoDBClusterHealthIndicator implements HealthIndicator {
                 .withReadConcern(ReadConcern.MAJORITY)
                 .withWriteConcern(WriteConcern.MAJORITY);
 
-        final InsertOneResult healthCheck = collection.insertOne(new Document().append("healthCheck", new Date()));
 
-        return Health.up().build();
-//        Map<String,Object> details = Map.of("ErrorCode", IS_HEALTHY);
-//        if(result != null) {
-//            IS_HEALTHY = ErrorCodes.ALL_GOOD;
-//            details = Map.of("version", result.getString("version"));
-//        } else {
-//            IS_HEALTHY = ErrorCodes.READ_FAILED;
-//            details = Map.of("ErrorCode", IS_HEALTHY);
-//        }
-//
-//        switch (IS_HEALTHY) {
-//            case ErrorCodes.READ_FAILED : return Health.down().withDetails(details).build();
-//            case ErrorCodes.WRITE_FAILED: return Health.down().withDetails(details).build();
-//            default: return Health.up().withDetails(details).build();
-//        }
-
+        Document result = db.runCommand(new Document( "buildInfo", 1));
+        builder.up().withDetail("version", result.getString("version")).build();
     }
 }

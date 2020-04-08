@@ -6,10 +6,18 @@ management:
   health:
     defaults:
       enabled: false
-spring:
-  data:
-    mongodb:
-      uri: "mongodb://localhost:27017/rbs"
+mongodb:
+  uri: "mongodb://localhost:27017/rbs"
+  opsmanager:
+    scheme: "http"
+    host: "localhost"
+    port: 8080
+    project-id: "5e1866f30838260eadbc467d"
+    api:
+      baseurl: "api/public/v1.0/groups"
+      key:
+        public: "nnidnbnl"
+        private: "a2336bb9-b998-428d-b0b0-ac065053e39c"
 logging:
   level:
     root: DEBUG
